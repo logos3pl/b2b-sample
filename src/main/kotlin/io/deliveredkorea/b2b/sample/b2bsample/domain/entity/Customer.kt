@@ -7,11 +7,6 @@ import jakarta.persistence.*
 @Entity
 @Table(name = "customer")
 class Customer(
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(nullable = false)
-  val id: Long,
-
   @Column(nullable = false, length = 100)
   val email: String,
 
@@ -19,7 +14,12 @@ class Customer(
   val name: String,
 
   @Column
-  val phoneNumber: String?
+  val phoneNumber: String?,
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(nullable = false)
+  val id: Long? = null,
 ) {
   companion object {
     fun create(newCustomerDTO: NewCustomerDTO) = Customer(

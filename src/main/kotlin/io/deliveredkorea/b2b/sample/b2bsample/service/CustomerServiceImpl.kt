@@ -24,8 +24,15 @@ class CustomerServiceImpl(
     .orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND) }
     .let(CustomerDTO::create)
 
-  override fun create(newCustomerDTO: NewCustomerDTO): CustomerDTO = newCustomerDTO
-    .let(Customer::create)
+  override fun create(
+    newCustomerDTO: NewCustomerDTO
+  ): CustomerDTO = Customer(
+    newCustomerDTO.email!!,
+    newCustomerDTO.name!!,
+    newCustomerDTO.phoneNumber,
+    0
+  )
+    //.let(Customer::create)
     .let(customerRepository::save)
     .let(CustomerDTO::create)
 }

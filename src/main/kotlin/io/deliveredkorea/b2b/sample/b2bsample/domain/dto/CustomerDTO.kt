@@ -15,7 +15,7 @@ data class CustomerDTO(
   companion object {
     // or Translator?
     fun create(customer: Customer) = CustomerDTO(
-      id = customer.id,
+      id = customer.id!!,
       email = customer.email,
       name = customer.name,
       phoneNumber = customer.phoneNumber
