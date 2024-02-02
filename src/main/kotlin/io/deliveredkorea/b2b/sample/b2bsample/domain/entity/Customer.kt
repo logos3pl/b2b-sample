@@ -8,13 +8,13 @@ import jakarta.persistence.*
 @Table(name = "customer")
 class Customer(
   @Column(nullable = false, length = 100)
-  val email: String,
+  var email: String,
 
   @Column(nullable = false, length = 100)
-  val name: String,
+  var name: String,
 
   @Column
-  val phoneNumber: String?,
+  var phoneNumber: String?,
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
