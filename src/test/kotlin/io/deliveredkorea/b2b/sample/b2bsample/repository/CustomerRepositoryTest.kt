@@ -37,6 +37,9 @@ class CustomerRepositoryTest {
 
   @Test
   fun testFindAll() {
+    val emptyCustomers = customerRepository.findAll()
+    assertThat(emptyCustomers.size).isEqualTo(0)
+
     customerRepository.save(customer1)
     customerRepository.save(customer2)
 
