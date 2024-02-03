@@ -11,14 +11,4 @@ data class CustomerDTO(
   val email: String,
   val name: String,
   val phoneNumber: String?
-) {
-  companion object {
-    // or Translator?
-    fun create(customer: Customer) = CustomerDTO(
-      id = customer.id!!,
-      email = customer.email,
-      name = customer.name,
-      phoneNumber = customer.phoneNumber
-    )
-  }
-}
+)

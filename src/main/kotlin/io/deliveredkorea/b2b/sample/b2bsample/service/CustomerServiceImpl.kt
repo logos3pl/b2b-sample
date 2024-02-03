@@ -7,7 +7,6 @@ import io.deliveredkorea.b2b.sample.b2bsample.domain.translator.CustomerTranslat
 import io.deliveredkorea.b2b.sample.b2bsample.repository.CustomerRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.http.HttpStatus
-import org.springframework.http.HttpStatusCode
 import org.springframework.stereotype.Service
 import org.springframework.web.server.ResponseStatusException
 
@@ -18,12 +17,12 @@ class CustomerServiceImpl(
 ) : CustomerService {
   override fun getAll(): List<CustomerDTO> = customerRepository
     .findAll()
-    .map(CustomerTranslator::createCustomerDTO)
+    .map(CustomerTranslator::toCustomerDTO)
 
   @Throws(ResponseStatusException::class)
   override fun get(id: Long): CustomerDTO = customerRepository
     .findByIdOrNull(id)
-    ?.let(CustomerDTO::create)
+    ?.let(CustomerTranslator::toCustomerDTO)
     ?: throw ResponseStatusException(HttpStatus.NOT_FOUND)
 
   override fun create(
@@ -33,7 +32,6 @@ class CustomerServiceImpl(
     newCustomerDTO.name!!,
     newCustomerDTO.phoneNumber,
   )
-    //.let(Customer::create)
     .let(customerRepository::save)
-    .let(CustomerDTO::create)
+    .let(CustomerTranslator::toCustomerDTO)
 }

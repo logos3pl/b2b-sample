@@ -4,7 +4,7 @@ import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.CustomerDTO
 import io.deliveredkorea.b2b.sample.b2bsample.domain.entity.Customer
 
 object CustomerTranslator {
-  fun createCustomerDTO(customer: Customer) = CustomerDTO(
+  fun toCustomerDTO(customer: Customer) = CustomerDTO(
     id = customer.id!!,
     email = customer.email,
     name = customer.name,

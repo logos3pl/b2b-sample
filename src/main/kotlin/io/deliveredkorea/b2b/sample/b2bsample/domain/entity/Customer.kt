@@ -20,13 +20,4 @@ class Customer(
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(nullable = false)
   val id: Long? = null,
-) {
-  companion object {
-    fun create(newCustomerDTO: NewCustomerDTO) = Customer(
-      id = 0,
-      email = newCustomerDTO.email!!,
-      name = newCustomerDTO.name!!,
-      phoneNumber = newCustomerDTO.phoneNumber
-    )
-  }
-}
+)
