@@ -19,5 +19,5 @@ class Customer(
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(nullable = false)
-  val id: Long? = null,
+  var id: Long? = null,
 )
