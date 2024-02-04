@@ -13,7 +13,7 @@ import org.springframework.web.server.ResponseStatusException
 
 @Service
 class CustomerServiceImpl(
-  val customerRepository: CustomerRepository,
+  private val customerRepository: CustomerRepository,
 ) : CustomerService {
   override fun getAll(): List<CustomerDTO> = customerRepository
     .findAll()
@@ -27,11 +27,8 @@ class CustomerServiceImpl(
 
   override fun create(
     newCustomerDTO: NewCustomerDTO
-  ): CustomerDTO = Customer(
-    newCustomerDTO.email!!,
-    newCustomerDTO.name!!,
-    newCustomerDTO.phoneNumber,
-  )
+  ): CustomerDTO = CustomerTranslator
+    .toCustomer(newCustomerDTO)
     .let(customerRepository::save)
     .let(CustomerTranslator::toCustomerDTO)
 }
