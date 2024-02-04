@@ -1,6 +1,7 @@
 package io.deliveredkorea.b2b.sample.b2bsample.service
 
 import io.deliveredkorea.b2b.sample.b2bsample.MockInitializer
+import io.deliveredkorea.b2b.sample.b2bsample.TestCustomerUtil.checkSameCustomer
 import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.CustomerDTO
 import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.NewCustomerDTO
 import org.assertj.core.api.Assertions.assertThat
@@ -65,16 +66,6 @@ class CustomerServiceTestWithoutSpring {
 
     val foundCustomer = customerService.get(customer.id)
     checkSameCustomer(foundCustomer, newCustomerDTO)
-  }
-
-  fun checkSameCustomer(
-    customerDTO: CustomerDTO,
-    newCustomerDTO: NewCustomerDTO
-  ) {
-    assertThat(customerDTO.id).isNotNull
-    assertThat(customerDTO.email).isEqualTo(newCustomerDTO.email)
-    assertThat(customerDTO.name).isEqualTo(newCustomerDTO.name)
-    assertThat(customerDTO.phoneNumber).isEqualTo(newCustomerDTO.phoneNumber)
   }
 
   @BeforeEach
