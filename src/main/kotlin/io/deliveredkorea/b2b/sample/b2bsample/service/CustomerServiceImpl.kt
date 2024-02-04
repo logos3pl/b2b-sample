@@ -2,7 +2,6 @@ package io.deliveredkorea.b2b.sample.b2bsample.service
 
 import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.CustomerDTO
 import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.NewCustomerDTO
-import io.deliveredkorea.b2b.sample.b2bsample.domain.entity.Customer
 import io.deliveredkorea.b2b.sample.b2bsample.domain.translator.CustomerTranslator
 import io.deliveredkorea.b2b.sample.b2bsample.repository.CustomerRepository
 import org.springframework.data.repository.findByIdOrNull

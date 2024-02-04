@@ -1,6 +1,5 @@
 package io.deliveredkorea.b2b.sample.b2bsample.domain.entity
 
-import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.NewCustomerDTO
 import jakarta.persistence.*
 
 
