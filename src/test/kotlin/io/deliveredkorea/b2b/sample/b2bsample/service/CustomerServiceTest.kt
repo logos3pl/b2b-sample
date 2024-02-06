@@ -1,7 +1,6 @@
 package io.deliveredkorea.b2b.sample.b2bsample.service
 
 import io.deliveredkorea.b2b.sample.b2bsample.TestCustomerUtil.checkSameCustomer
-import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.CustomerDTO
 import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.NewCustomerDTO
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
