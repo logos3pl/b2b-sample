@@ -1,6 +1,6 @@
 package io.deliveredkorea.b2b.sample.b2bsample.controller
 
-import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.NewCustomerDTO
+import io.deliveredkorea.b2b.sample.b2bsample.mapper.customer.dto.NewCustomerRequest
 import io.deliveredkorea.b2b.sample.b2bsample.getDTOErrorCount
 import jakarta.validation.Validator
 import org.assertj.core.api.Assertions.*
@@ -17,7 +17,7 @@ class CustomerControllerValidationTest {
   @Test
   @DisplayName("NewCustomerDTO Validation Test")
   fun testValidationOfNewCustomerDTO() {
-    val newCustomerDTO = NewCustomerDTO(
+    val newCustomerDTO = NewCustomerRequest(
       email = null,
       name = null,
       phoneNumber = null

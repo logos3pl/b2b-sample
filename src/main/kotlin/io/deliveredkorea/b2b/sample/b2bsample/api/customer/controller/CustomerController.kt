@@ -1,9 +1,8 @@
-package io.deliveredkorea.b2b.sample.b2bsample.controller
+package io.deliveredkorea.b2b.sample.b2bsample.api.customer.controller
 
-import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.CustomerDTO
-import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.NewCustomerDTO
-import io.deliveredkorea.b2b.sample.b2bsample.service.CustomerService
-import io.deliveredkorea.b2b.sample.b2bsample.service.CustomerServiceImpl
+import io.deliveredkorea.b2b.sample.b2bsample.mapper.customer.dto.CustomerResponse
+import io.deliveredkorea.b2b.sample.b2bsample.mapper.customer.dto.NewCustomerRequest
+import io.deliveredkorea.b2b.sample.b2bsample.core.customer.service.CustomerService
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -18,17 +17,17 @@ class CustomerController(
   val customerService: CustomerService
 ) {
   @GetMapping
-  fun getCustomers(): List<CustomerDTO> = customerService
+  fun getCustomers(): List<CustomerResponse> = customerService
     .getAll()
 
   @GetMapping("/{id}")
   fun getCustomer(
     @PathVariable id: Long
-  ): CustomerDTO = customerService.get(id)
+  ): CustomerResponse = customerService.get(id)
 
   @PostMapping
   fun createCustomer(
-    @RequestBody @Valid newCustomerDTO: NewCustomerDTO
-  ): CustomerDTO = customerService.create(newCustomerDTO)
+    @RequestBody @Valid newCustomerDTO: NewCustomerRequest
+  ): CustomerResponse = customerService.create(newCustomerDTO)
 
 }

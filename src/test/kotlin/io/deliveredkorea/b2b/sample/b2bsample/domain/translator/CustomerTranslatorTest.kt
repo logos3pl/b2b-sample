@@ -1,14 +1,15 @@
 package io.deliveredkorea.b2b.sample.b2bsample.domain.translator
 
-import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.NewCustomerDTO
-import io.deliveredkorea.b2b.sample.b2bsample.domain.entity.Customer
+import io.deliveredkorea.b2b.sample.b2bsample.mapper.customer.dto.NewCustomerRequest
+import io.deliveredkorea.b2b.sample.b2bsample.infrastructure.database.customer.entity.Customer
+import io.deliveredkorea.b2b.sample.b2bsample.mapper.customer.CustomerTranslator
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class CustomerTranslatorTest {
   @Test
   fun testToCustomer() {
-    val newCustomerDTO = NewCustomerDTO(
+    val newCustomerDTO = NewCustomerRequest(
       email = "kkum04@naver.com",
       name = "Ken Park",
       phoneNumber = "01037529304"

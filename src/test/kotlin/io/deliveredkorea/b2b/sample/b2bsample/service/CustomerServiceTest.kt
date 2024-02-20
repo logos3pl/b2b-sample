@@ -1,7 +1,8 @@
 package io.deliveredkorea.b2b.sample.b2bsample.service
 
 import io.deliveredkorea.b2b.sample.b2bsample.TestCustomerUtil.checkSameCustomer
-import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.NewCustomerDTO
+import io.deliveredkorea.b2b.sample.b2bsample.core.customer.service.CustomerService
+import io.deliveredkorea.b2b.sample.b2bsample.mapper.customer.dto.NewCustomerRequest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -16,7 +17,7 @@ class CustomerServiceTest {
 
   @Test
   fun testGetCustomer() {
-    val newCustomerDTO = NewCustomerDTO(
+    val newCustomerDTO = NewCustomerRequest(
       "kkum04@gmail.com",
       "박태환",
       "01037529304"
@@ -33,7 +34,7 @@ class CustomerServiceTest {
 
   @Test
   fun testCreateCustomer() {
-    val newCustomerDTO = NewCustomerDTO(
+    val newCustomerDTO = NewCustomerRequest(
       "kkum04@gmail.com",
       "박태환",
       "01037529304"

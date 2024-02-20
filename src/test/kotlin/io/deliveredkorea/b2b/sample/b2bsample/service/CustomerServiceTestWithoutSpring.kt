@@ -2,13 +2,13 @@ package io.deliveredkorea.b2b.sample.b2bsample.service
 
 import io.deliveredkorea.b2b.sample.b2bsample.MockInitializer
 import io.deliveredkorea.b2b.sample.b2bsample.TestCustomerUtil.checkSameCustomer
-import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.CustomerDTO
-import io.deliveredkorea.b2b.sample.b2bsample.domain.dto.NewCustomerDTO
+import io.deliveredkorea.b2b.sample.b2bsample.core.customer.service.CustomerService
+import io.deliveredkorea.b2b.sample.b2bsample.core.customer.service.CustomerServiceImpl
+import io.deliveredkorea.b2b.sample.b2bsample.mapper.customer.dto.NewCustomerRequest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import org.springframework.test.annotation.DirtiesContext
 import org.springframework.web.server.ResponseStatusException
 
 class CustomerServiceTestWithoutSpring {
@@ -18,7 +18,7 @@ class CustomerServiceTestWithoutSpring {
   fun testGetAll() {
     assertThat(customerService.getAll()).isEmpty()
 
-    val newDTO = NewCustomerDTO(
+    val newDTO = NewCustomerRequest(
       "kkum04@gmail.com",
       "박태환",
       "01037529304"
@@ -38,7 +38,7 @@ class CustomerServiceTestWithoutSpring {
 
   @Test
   fun testGetCustomer() {
-    val newCustomerDTO = NewCustomerDTO(
+    val newCustomerDTO = NewCustomerRequest(
       "kkum04@gmail.com",
       "박태환",
       "01037529304"
@@ -55,7 +55,7 @@ class CustomerServiceTestWithoutSpring {
 
   @Test
   fun testCreateCustomer() {
-    val newCustomerDTO = NewCustomerDTO(
+    val newCustomerDTO = NewCustomerRequest(
       "kkum04@gmail.com",
       "박태환",
       "01037529304"

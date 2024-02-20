@@ -1,4 +1,4 @@
-package io.deliveredkorea.b2b.sample.b2bsample.domain.entity
+package io.deliveredkorea.b2b.sample.b2bsample.infrastructure.database.customer.entity
 
 import jakarta.persistence.*
 

@@ -1,6 +1,7 @@
 package io.deliveredkorea.b2b.sample.b2bsample.repository
 
-import io.deliveredkorea.b2b.sample.b2bsample.domain.entity.Customer
+import io.deliveredkorea.b2b.sample.b2bsample.infrastructure.database.customer.entity.Customer
+import io.deliveredkorea.b2b.sample.b2bsample.infrastructure.database.customer.repository.CustomerRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.*
 import org.springframework.beans.factory.annotation.Autowired

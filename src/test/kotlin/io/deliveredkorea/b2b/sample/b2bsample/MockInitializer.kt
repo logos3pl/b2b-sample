@@ -1,7 +1,7 @@
 package io.deliveredkorea.b2b.sample.b2bsample
 
-import io.deliveredkorea.b2b.sample.b2bsample.domain.entity.Customer
-import io.deliveredkorea.b2b.sample.b2bsample.repository.CustomerRepository
+import io.deliveredkorea.b2b.sample.b2bsample.infrastructure.database.customer.entity.Customer
+import io.deliveredkorea.b2b.sample.b2bsample.infrastructure.database.customer.repository.CustomerRepository
 import org.mockito.Mockito
 import org.springframework.data.repository.findByIdOrNull
 import java.util.*
